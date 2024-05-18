@@ -12,7 +12,6 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
-
     @PostMapping("")
     public UserDTO insertUser(@RequestBody UserDTO user) {
         return userService.insertUser(user);
