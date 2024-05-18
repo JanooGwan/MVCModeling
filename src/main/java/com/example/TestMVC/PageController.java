@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PageController {
     @GetMapping("/members")
     public String members(Model model) {
-        // model.addAttribute("users", UserRepository.users.size());
+        model.addAttribute("users", UserRepository.users);
         return "members";
     }
 }
