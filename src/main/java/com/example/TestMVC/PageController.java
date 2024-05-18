@@ -2,16 +2,13 @@ package com.example.TestMVC;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PageController {
     @GetMapping("/members")
     public String members(Model model) {
-        model.addAttribute("users", UserService.);
+        // model.addAttribute("users", UserRepository.users.size());
         return "members";
     }
 }
