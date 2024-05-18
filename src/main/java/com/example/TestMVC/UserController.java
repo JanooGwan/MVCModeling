@@ -18,10 +18,6 @@ public class UserController {
         return userService.insertUser(user);
     }
 
-    @ResponseBody
-    @GetMapping("/members")
-    public String members() { return "members"; }
-
     @GetMapping("")
     public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
