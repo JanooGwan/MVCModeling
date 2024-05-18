@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="kr" xmlns:th="http://www.thymeleaf.org"></html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Members List</title>
+    <title>Members</title>
+    <style>
+        td {
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
 <body>
-회원 목록<br><br>
-<p th:text="${users.get(0).getAge()}" ></p>
-
+<h1>회원 목록</h1>
+<table>
+    <tr th:each="user : ${users}">
+        <td th:text="|이름 : ${user.userName}|"></td>
+        <td th:text="|나이 : ${user.age}|"></td>
+        <td th:text="|정보 : ${user.userInfo}|"></td>
+    </tr>
+</table>
 </body>
+</html>
