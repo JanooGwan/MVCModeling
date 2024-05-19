@@ -26,22 +26,22 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/{userName}")
+    @GetMapping("/{id}")
     public UserDTO getUserByUserName(@PathVariable int id) {
         return userService.getUserById(id);
     }
 
-    @PutMapping("/{userName}")
+    @PutMapping("/{id}")
     public void updateUserName(@PathVariable int id, @RequestBody UserDTO user) {
         userService.updateUserName(id, user);
     }
 
-    @PutMapping("/{userInfo}")
+    @PutMapping("/{id}")
     public void updateUserInfo(int id, UserDTO user) {
         userService.updateUserInfo(id, user);
     }
 
-    @DeleteMapping("/{userName}")
+    @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable int id) {
         userService.deleteUser(id);
     }

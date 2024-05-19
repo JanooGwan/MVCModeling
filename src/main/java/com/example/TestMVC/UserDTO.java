@@ -14,8 +14,5 @@ public class UserDTO {
     private int userAge;
     private String userInfo;
 
-    public int getAge() {
-        return this.userAge;
-    }
 
 }
