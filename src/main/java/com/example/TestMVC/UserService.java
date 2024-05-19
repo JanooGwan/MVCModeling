@@ -18,19 +18,19 @@ public class UserService {
         return userRepository.getAllUsers();
     }
 
-    public UserDTO getUserByUserName(String userName) {
-        return userRepository.getUserByUserName(userName);
+    public UserDTO getUserById(int id) {
+        return userRepository.getUserById(id);
     }
 
-    public void updateUserName(String userName, UserDTO user) {
-        userRepository.updateUserName(userName, user);
+    public void updateUserName(int id, UserDTO user) {
+        userRepository.updateUserName(id, user);
     }
 
-    public void updateUserInfo(String userName, UserDTO user) {
-        userRepository.updateUserInfo(userName, user);
+    public void updateUserInfo(int id, UserDTO user) {
+        userRepository.updateUserInfo(id, user);
     }
 
-    public void deleteUser(String userName) {
-        userRepository.deleteUser(userName);
+    public void deleteUser(int id) {
+        userRepository.deleteUser(id);
     }
 }

@@ -26,7 +26,7 @@ public class ArticleRepository {
         return articles.stream()
                 .filter(articleDTO -> articleDTO.getId() == id)
                 .findAny()
-                .orElse(new ArticleDTO(0, 0, 0, "", "", 0, 0);
+                .orElse(new ArticleDTO(0, 0, 0, "", "", 0, 0));
     }
 
     public void updateArticleContent(int id, ArticleDTO article) {

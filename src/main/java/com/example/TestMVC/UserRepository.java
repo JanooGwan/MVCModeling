@@ -11,7 +11,7 @@ public class UserRepository {
 
     static {
         users= new ArrayList<UserDTO>();
-        users.add(new UserDTO("kwanwoo", 23, "hello"));
+        users.add(new UserDTO(1, "kwanwoo", 23, "hello"));
     }
     public UserDTO insertUser(UserDTO user) {
         users.add(user);
@@ -22,30 +22,30 @@ public class UserRepository {
         return users;
     }
 
-    public UserDTO getUserByUserName(String userName) {
+    public UserDTO getUserById(int id) {
         return users.stream()
-                .filter(userDTO -> userDTO.getUserName().equals(userName))
+                .filter(userDTO -> userDTO.getId()==id)
                 .findAny()
-                .orElse(new UserDTO("", 0, ""));
+                .orElse(new UserDTO(0, "", 0, ""));
     }
 
-    public void updateUserName(String userName, UserDTO user) {
+    public void updateUserName(int id, UserDTO user) {
         users.stream()
-                .filter(userDTO -> userDTO.getUserName().equals(userName))
+                .filter(userDTO -> userDTO.getId()==id)
                 .findAny()
-                .orElse(new UserDTO("", 0, ""))
+                .orElse(new UserDTO(0, "", 0, ""))
                 .setUserName(user.getUserName());
     }
 
-    public void updateUserInfo(String userName, UserDTO user) {
+    public void updateUserInfo(int id, UserDTO user) {
         users.stream()
-                .filter(userDTO -> userDTO.getUserName().equals(userName))
+                .filter(userDTO -> userDTO.getId()==id)
                 .findAny()
-                .orElse(new UserDTO("", 0, ""))
+                .orElse(new UserDTO(0, "", 0, ""))
                 .setUserInfo(user.getUserInfo());
     }
 
-    public void deleteUser(String userName) {
-        users.removeIf(userDTO -> userDTO.getUserName().equals(userName));
+    public void deleteUser(int id) {
+        users.removeIf(userDTO -> userDTO.getId()==id);
     }
 }
