@@ -36,11 +36,6 @@ public class UserController {
         userService.updateUserName(id, user);
     }
 
-    @PutMapping("/{id}")
-    public void updateUserInfo(int id, UserDTO user) {
-        userService.updateUserInfo(id, user);
-    }
-
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable int id) {
         userService.deleteUser(id);
