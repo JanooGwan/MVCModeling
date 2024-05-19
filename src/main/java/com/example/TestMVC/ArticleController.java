@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/articles")
+public class ArticleController {
     @Autowired
-    UserService userService;
+    ArticleService articleService;
 
     @PostMapping("")
-    public UserDTO insertUser(@RequestBody UserDTO user) {
+    public ArticleDTO insertUser(@RequestBody UserDTO user) {
         return userService.insertUser(user);
     }
 
