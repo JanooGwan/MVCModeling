@@ -8,40 +8,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RestController
 @RequestMapping("/articles")
 public class ArticleController {
     @Autowired
     ArticleService articleService;
 
     @PostMapping("")
-    public ArticleDTO insertUser(@RequestBody UserDTO user) {
-        return userService.insertUser(user);
+    public ArticleDTO insertArticle(@RequestBody ArticleDTO article) {
+        return articleService.insertArticle(article);
     }
-
-
 
     @GetMapping("")
-    public List<UserDTO> getAllUsers() {
-        return userService.getAllUsers();
+    public List<ArticleDTO> getAllArticles() {
+        return articleService.getAllArticles();
     }
 
-    @GetMapping("/{userName}")
-    public UserDTO getUserByUserName(@PathVariable String userName) {
-        return userService.getUserByUserName(userName);
+    @GetMapping("/{id}")
+    public ArticleDTO getArticleById(@PathVariable int id) {
+        return articleService.getArticleById(id);
     }
 
-    @PutMapping("/{userName}")
-    public void updateUserName(@PathVariable String userName, @RequestBody UserDTO user) {
-        userService.updateUserName(userName, user);
+    @PutMapping("/{id}")
+    public void updateArticleContent(@PathVariable int id, @RequestBody ArticleDTO article) {
+        articleService.updateArticleContent(id, article);
     }
 
-    @PutMapping("/{userInfo}")
-    public void updateUserInfo(String userName, UserDTO user) {
-        userService.updateUserInfo(userName, user);
-    }
-
-    @DeleteMapping("/{userName}")
-    public void deleteUser(@PathVariable String userName) {
-        userService.deleteUser(userName);
+    @DeleteMapping("/{id}")
+    public void deleteArticle(@PathVariable int id) {
+        articleService.deleteArticle(id);
     }
 }
